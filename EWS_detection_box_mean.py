@@ -20,8 +20,8 @@ import numpy.ma as ma
 from scipy.stats import norm
 from matplotlib import rc
 
-from regimeshifts import regime_shifts as rs
-from regimeshifts import ews
+import regime_shifts as rs
+import ews
 
 fontsize = 14
 rc('font', **{'size' : fontsize})
@@ -106,8 +106,8 @@ ax[0].set_xlim(t[0],t[-1])
     
    
 #### File names containing data of SSP and PI control runs ####
-fname = 'C:/Users/pdlr201/OneDrive - University of Exeter/OptimESM/CMIP6_data/'+var+'/'+experiment_ssps+'/Processed_data/'+region+'/'+var+'_'+models+'_'+experiment_hist+'_'+experiment_ssps+'_'+variant_ids+'_1850-'+date_ends+'_'+region+'_corrected.mat'
-fname2 = 'C:/Users/pdlr201/OneDrive - University of Exeter/OptimESM/CMIP6_data/'+var+'/piControl/Processed_data/'+region+'/'+var+'_'+models+'_piControl_'+variant_ids+'_0001-'+control_ends+'_'+region+'_corrected.mat'
+fname = var+'_'+models+'_'+experiment_hist+'_'+experiment_ssps+'_'+variant_ids+'_1850-'+date_ends+'_'+region+'_corrected.mat'
+fname2 = var+'_'+models+'_piControl_'+variant_ids+'_0001-'+control_ends+'_'+region+'_corrected.mat'
 
 LONS = loadmat(fname)['LONS'][0]    # Retrieve longitudes
 LATS = loadmat(fname)['LATS'][0]    # Retrieve latitudes
